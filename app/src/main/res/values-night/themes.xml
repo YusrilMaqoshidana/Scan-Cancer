@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Asclepius" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primaryDark</item>
+        <item name="colorSecondary">@color/secondaryDark</item>
+        <item name="colorTertiary">@color/tertiaryDark</item>
+        <item name="colorPrimaryContainer">@color/primaryContainerDark</item>
+        <item name="colorSecondaryContainer">@color/secondaryContainerDark</item>
+        <item name="colorTertiaryContainer">@color/tertiaryContainerDark</item>
+        <item name="colorSurfaceDim">@color/surfaceDimDark</item>
+        <item name="colorSurface">@color/surfaceDark</item>
+        <item name="colorSurfaceBright">@color/surfaceBrightDark</item>
+        <item name="colorOnSurface">@color/onSurfaceDark</item>
+        <item name="colorOnSurfaceVariant">@color/onSurfaceVarDark</item>
+        <item name="colorOutline">@color/outlinedDark</item>
+        <item name="colorOutlineVariant">@color/outlinedVariantDark</item>
+        <item name="colorError">@color/errorDark</item>
+        <item name="colorErrorContainer">@color/errorContainerDark</item>
+        <item name="colorOnErrorContainer">@color/onErrorContainerDark</item>
+        <item name="colorOnError">@color/onErrorDark</item>
+        <item name="colorSurfaceInverse">@color/inverseSurfaceDark</item>
+        <item name="colorOnSurfaceInverse">@color/inverseOnSurfaceDark</item>
+        <item name="colorPrimaryInverse">@color/inversePrimaryDark</item>
+
+    </style>
+</resources>

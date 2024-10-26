@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    // Light Theme
+    <color name="primaryLight">#142700</color>
+    <color name="secondaryLight">#1c2511</color>
+    <color name="tertiaryLight">#002725</color>
+    <color name="primaryContainer">#314a12</color>
+    <color name="secondaryContainer">#3c462f</color>
+    <color name="tertiaryContainer">#1a4a47</color>
+    <color name="surfaceDim">#dadbd0</color>
+    <color name="surface">#f9faef</color>
+    <color name="surfaceBright">#f9faef</color>
+    <color name="onSurface">#000000</color>
+    <color name="onSurfaceVar">#21251c</color>
+    <color name="outlined">#404439</color>
+    <color name="outlinedVariant">#404439</color>
+    <color name="error">#8c0009</color>
+    <color name="errorContainer">#8c0009</color>
+    <color name="onErrorContainer">#ffffff</color>
+    <color name="onError">#ffffff</color>
+    <color name="inverseSurface">#2f312a</color>
+    <color name="inverseOnSurface">#ffffff</color>
+    <color name="inversePrimary">#d6f7ac</color>
+
+    <color name="primaryDark">#f4ffdf</color>
+    <color name="secondaryDark">#f4ffdf</color>
+    <color name="tertiaryDark">#eafffc</color>
+    <color name="primaryContainerDark">#b5d58e</color>
+    <color name="secondaryContainerDark">#c4cfb1</color>
+    <color name="tertiaryContainerDark">#a4d4d0</color>
+    <color name="surfaceDimDark">#12140e</color>
+    <color name="surfaceDark">#12140e</color>
+    <color name="surfaceBrightDark">#383a32</color>
+    <color name="onSurfaceDark">#ffffff</color>
+    <color name="onSurfaceVarDark">#f9fced</color>
+    <color name="outlinedDark">#c9ccbe</color>
+    <color name="outlinedVariantDark">#c9ccbe</color>
+    <color name="errorDark">#fff9f9</color>
+    <color name="errorContainerDark">#ffbab1</color>
+    <color name="onErrorContainerDark">#000000</color>
+    <color name="onErrorDark">#000000</color>
+    <color name="inverseSurfaceDark">#e2e3d8</color>
+    <color name="inverseOnSurfaceDark">#000000</color>
+    <color name="inversePrimaryDark">#1a3000</color>
+
+</resources>
