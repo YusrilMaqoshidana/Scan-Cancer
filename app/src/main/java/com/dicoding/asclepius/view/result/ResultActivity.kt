@@ -6,7 +6,6 @@ import android.graphics.Color
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -34,8 +33,6 @@ class ResultActivity : AppCompatActivity() {
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setupToolbar()
-        Log.d(TAG, "ResultActivity created")
-
         showImage()
         showClassificationResult()
     }
@@ -57,24 +54,20 @@ class ResultActivity : AppCompatActivity() {
                     when (results) {
                         is Results.Success -> {
                             Toast.makeText(this, "History saved successfully", Toast.LENGTH_SHORT).show()
-                            Log.d(TAG, "History saved successfully")
                             finish()
                         }
                         is Results.Error -> {
                             Toast.makeText(this, "Failed to save history: ${results.error}", Toast.LENGTH_SHORT).show()
-                            Log.e(TAG, "Failed to save history: ${results.error}")
                         }
                         is Results.Loading -> {
-                            Log.d(TAG, "Saving history...")
+                            binding.progressBar.visibility = android.view.View.VISIBLE
                         }
                     }
                 }
             } else {
                 Toast.makeText(this, "Cannot save history: Missing image or result", Toast.LENGTH_SHORT).show()
-                Log.e(TAG, "Cannot save history: imageUri=$imageUri, result=$classificationResult")
             }
         } catch (e: Exception) {
-            Log.e(TAG, "Error saving history", e)
             Toast.makeText(this, "Error saving history: ${e.message}", Toast.LENGTH_SHORT).show()
         }
     }
@@ -93,14 +86,12 @@ class ResultActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         binding.toolbar.navigationIcon?.setTint(Color.WHITE)
-        Log.d(TAG, "Toolbar setup complete")
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home -> {
                 finish()
-                Log.d(TAG, "Back button pressed, finishing ResultActivity")
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -110,13 +101,15 @@ class ResultActivity : AppCompatActivity() {
     private fun showImage() {
         val imageUri = Uri.parse(intent.getStringExtra(EXTRA_IMAGE_URI))
         imageUri?.let {
-            Log.d(TAG, "Showing image with URI: $it")
-            binding.resultImage.setImageURI(it)
+            binding.
+            resultImage.setImageURI(it)
         } ?: run {
-            Log.e(TAG, "Image URI is null")
+            "Image URI is null".showToast()
         }
     }
-
+    private fun String.showToast() {
+        Toast.makeText(this@ResultActivity, this, Toast.LENGTH_SHORT).show()
+    }
     private fun showClassificationResult() {
         val category = intent.getStringExtra(EXTRA_RESULT)
         val confidenceScore = intent.getFloatExtra(EXTRA_CONFIDENCE_SCORE, 0f)
@@ -125,10 +118,8 @@ class ResultActivity : AppCompatActivity() {
 
         if (category != null) {
             binding.resultText.text = getString(R.string.classification_result, category, percentage)
-            Log.d(TAG, "Classification result displayed: $category, $percentage")
         } else {
             binding.resultText.text = getString(R.string.result_not_available)
-            Log.d(TAG, "Classification result not available")
         }
         binding.btnSave.setOnClickListener {
             saveHistory(imageUri, category, confidenceScore)
@@ -139,7 +130,6 @@ class ResultActivity : AppCompatActivity() {
         const val EXTRA_IMAGE_URI = "extra_image_uri"
         const val EXTRA_RESULT = "extra_result"
         const val EXTRA_CONFIDENCE_SCORE = "extra_confidence_score"
-        private const val TAG = "ResultActivity"
     }
 }
 

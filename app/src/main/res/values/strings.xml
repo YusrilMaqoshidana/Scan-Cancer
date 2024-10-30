@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">Asclepius</string>
-    <string name="camera_x">CameraX</string>
-    <string name="camera">Kamera</string>
     <string name="gallery">Galeri</string>
     <string name="analyze">Analyze</string>
     <string name="result">Hasil Analisis</string>
@@ -14,7 +12,6 @@
     <string name="result_not_available">Result not available.</string>
     <string name="hasil_analisis">Hasil Analisis</string>
     <string name="simpan_riwayat">Simpan Riwayat</string>
-    <string name="tidak_ada_berita">Tidak ada berita</string>
     <string name="title_news">Judul Berita</string>
     <string name="description_news">Description News</string>
     <string name="image_news">Image News</string>

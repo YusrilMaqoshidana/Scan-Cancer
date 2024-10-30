@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.dicoding.asclepius.data.repository.HistoryRepository
-import com.dicoding.asclepius.di.ClassInjection
+import com.dicoding.asclepius.di.Injection
 import com.dicoding.asclepius.view.history.HistoryViewModel
 
 class HistoryViewModelFactory(private val historyRepository: HistoryRepository) :
@@ -23,7 +23,7 @@ class HistoryViewModelFactory(private val historyRepository: HistoryRepository) 
         fun getInstance(context: Context): HistoryViewModelFactory =
             instance ?: synchronized(this) {
                 instance
-                    ?: HistoryViewModelFactory(ClassInjection.provideHistoryRepository(context)).also {
+                    ?: HistoryViewModelFactory(Injection.provideHistoryRepository(context)).also {
                         instance = it
                     }
             }

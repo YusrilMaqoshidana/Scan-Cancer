@@ -26,10 +26,17 @@
                 app:titleTextColor="?attr/colorOnPrimary"
                 app:title="@string/result" />
 
+
         </com.google.android.material.appbar.AppBarLayout>
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
         <ImageView
-            android:id="@+id/result_image"
+            android:id="@+id/resultImage"
             android:layout_width="match_parent"
             android:layout_height="400dp"
             android:layout_margin="16dp"
@@ -38,7 +45,7 @@
             app:srcCompat="@drawable/ic_place_holder" />
 
         <TextView
-            android:id="@+id/result_text"
+            android:id="@+id/resultText"
             android:fontFamily="@font/poppins_bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

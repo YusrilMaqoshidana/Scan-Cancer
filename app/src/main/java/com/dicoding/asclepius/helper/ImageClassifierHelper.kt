@@ -2,13 +2,12 @@ package com.dicoding.asclepius.helper
 
 import android.content.Context
 import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.graphics.ImageDecoder
 import android.net.Uri
 import android.os.Build
 import android.os.SystemClock
 import android.provider.MediaStore
-import android.util.Log
+import android.widget.Toast
 import com.dicoding.asclepius.R
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.common.ops.CastOp
@@ -50,7 +49,7 @@ class ImageClassifierHelper(
             )
         } catch (e: IllegalStateException) {
             classifierListener?.onError(context.getString(R.string.image_classifier_failed))
-            Log.e(TAG, e.message.toString())
+            Toast.makeText(context, e.message.toString(), Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -78,6 +77,7 @@ class ImageClassifierHelper(
         )
     }
 
+    @Suppress("DEPRECATION")
     private fun uriToBitmap(uri: Uri, context: Context): Bitmap {
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
             val source = ImageDecoder.createSource(context.contentResolver, uri)
@@ -91,12 +91,8 @@ class ImageClassifierHelper(
         fun onError(error: String)
         fun onResults(
             results: List<Classifications>?,
-            inferenceTime: Long
+            ignoredInferenceTime: Long
         )
-    }
-
-    companion object {
-        private const val TAG = "ImageClassifierHelper"
     }
 
 }
