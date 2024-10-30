@@ -9,4 +9,19 @@
     <string name="history">History</string>
     <string name="news">News</string>
     <string name="scan_cancer">Scan Cancer</string>
+    <string name="image_classifier_failed">Failed to inisialize the Image Classifier. Check the logs for details.</string>
+    <string name="empty_image_warning">Image cannot be empty.</string>
+    <string name="result_not_available">Result not available.</string>
+    <string name="hasil_analisis">Hasil Analisis</string>
+    <string name="simpan_riwayat">Simpan Riwayat</string>
+    <string name="tidak_ada_berita">Tidak ada berita</string>
+    <string name="title_news">Judul Berita</string>
+    <string name="description_news">Description News</string>
+    <string name="image_news">Image News</string>
+    <string name="tanggal">tanggal</string>
+    <string name="berita_tentang_kanker">Berita Tentang Kanker</string>
+    <string name="tidak_ada_history">Tidak ada history</string>
+    <string name="classification_result">Hasilnya adalah %1$s dengan akurasi %2$s</string>
+    <string name="author">Author</string>
+
 </resources>

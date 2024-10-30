@@ -1,4 +1,18 @@
 package com.dicoding.asclepius.data.local.room
 
-class HistoryDao {
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
+import com.dicoding.asclepius.data.local.model.HistoryEntity
+
+@Dao
+interface HistoryDao {
+
+    @Query("SELECT * FROM history ORDER BY timestamp DESC")
+    suspend fun getHistories(): List<HistoryEntity>
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertHistory(history: HistoryEntity)
+
 }

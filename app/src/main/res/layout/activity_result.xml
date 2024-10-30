@@ -9,12 +9,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center">
+
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -26,18 +27,32 @@
                 app:title="@string/result" />
 
         </com.google.android.material.appbar.AppBarLayout>
+
         <ImageView
             android:id="@+id/result_image"
             android:layout_width="match_parent"
             android:layout_height="400dp"
+            android:layout_margin="16dp"
+            android:contentDescription="@string/hasil_analisis"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/ic_place_holder"/>
+            app:srcCompat="@drawable/ic_place_holder" />
 
         <TextView
             android:id="@+id/result_text"
+            android:fontFamily="@font/poppins_bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
+            android:gravity="center"
+            android:textStyle="bold"
             android:text="@string/result" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/simpan_riwayat"/>
     </LinearLayout>
 </ScrollView>
